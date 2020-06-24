@@ -1,5 +1,4 @@
-import { AsyncStorage } from 'react-native';
-
+import AsyncStorage from "@react-native-community/async-storage";
 export class TokenStorage {
   key;
   constructor(key) {
@@ -12,7 +11,7 @@ export class TokenStorage {
 
   async loadTokens() {
     const tokens = await AsyncStorage.getItem(this.key);
-    return (tokens) ? JSON.parse(tokens) : undefined;
+    return tokens ? JSON.parse(tokens) : undefined;
   }
 
   clearTokens() {
